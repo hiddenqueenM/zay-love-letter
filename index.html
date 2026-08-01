@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <title>A question for zay</title>
+    <link rel="stylesheet" href="./style.css">
+
+  </head>
+    
+  <body>
+  <div id="hearts"></div>
+<div class="page active" id="page1">
+
+  <h1>For the boy who has loved me through it all 💜</h1>
+
+  <div class="envelope">
+
+    <div class="letter">
+      <p id="poem"></p>
+    </div>
+
+  </div>
+
+  <button onclick="nextPage(2)">Continue</button>
+
+</div>
+
+<div class="page" id="page2">
+
+  <h1>Our Soundtrack 💜</h1>
+
+  <div class="record-player">
+
+    <div class="record">
+      <div class="record-center"></div>
+    </div>
+
+    <div class="needle"></div>
+
+  </div>
+
+  <p>
+    Every song holds a memory.
+    Every lyric reminds me of a moment.
+  </p>
+
+  <a 
+    href="https://open.spotify.com/playlist/6CGmj8NlgAK0vhJrRmBR3D" 
+    target="_blank" 
+    class="spotify-button">
+    🎧 Listen to Our Playlist
+  </a>
+  <br><br>
+<button onclick="previousPage(1)">← Back</button>
+  
+  <br><br>
+
+    <button onclick="nextPage(3)">Continue</button>
+
+</div>
+
+
+<div class="page" id="page3">
+
+  <h1>One Last Question 💜</h1>
+
+  <p>
+    I love you zay so I was wondering...
+  </p>
+
+  <h2>Will you be with me again?</h2>
+
+  <button onclick="answerYes()">Yes ❤️</button>
+  
+  <p id="response"></p>
+  
+<button onclick="previousPage(2)">← Back</button>
+</div>
+    <script  src="./script.js"></script>
+
+  </body>
+  
+</html>
