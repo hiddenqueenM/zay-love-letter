@@ -116,7 +116,7 @@ button {
 }
 .envelope {
   position: relative;
-  width: min(600px, 90vw);
+  width: 600px;
   height: 420px;
   background: #c9a8c9;
   margin: 50px auto;
