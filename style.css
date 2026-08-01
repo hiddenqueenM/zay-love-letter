@@ -51,7 +51,7 @@ button {
 }
 .record-player {
   position: relative;
-  width: 700px
+  width: 700px;
   height: 330px;
   margin: 40px auto;
   background: #e6d6ff;
