@@ -51,8 +51,8 @@ button {
 }
 .record-player {
   position: relative;
-  width: 330px;
-  height: 330px;
+  width: min(330px, 85vw);
+  height: min(330px, 85vw);
   margin: 40px auto;
   background: #e6d6ff;
   border-radius: 25px;
@@ -116,7 +116,7 @@ button {
 }
 .envelope {
   position: relative;
-  width: 600px;
+  width: min(500px, 90vw);
   height: 420px;
   background: #c9a8c9;
   margin: 50px auto;
