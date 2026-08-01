@@ -130,12 +130,13 @@ button {
 .flap {
   position: absolute;
   top: 0;
-  left: 0;
+  left: 50%;
+  transform: translateX(-50%);
   width: 0;
   height: 0;
-  border-left: 300px solid transparent;
-  border-right: 300px solid transparent;
-  border-top: 200px solid #b88bb8;
+  border-left: 45vw solid transparent;
+  border-right: 45vw solid transparent;
+  border-top: 150px solid #b88bb8;
   transform-origin: top;
   z-index: 3;
   animation: openEnvelope 2s ease forwards;
@@ -143,19 +144,19 @@ button {
 
 
 /* Letter */
-.letter {
+ .letter {
   position: absolute;
   background: white;
-  width: 500px;
+  width: calc(100% - 40px);
   height: 350px;
-  left: 50px;
+  left: 20px;
   top: 60px;
-  padding: 25px;
+  padding: 20px;
+  box-sizing: border-box;
   border-radius: 10px;
   box-shadow: 0 8px 20px rgba(0,0,0,0.2);
   z-index: 2;
   overflow-y: auto;
-
   animation: letterRise 2s ease 1s forwards;
   transform: translateY(100px);
 }
@@ -210,47 +211,5 @@ button {
   100% {
     transform: translateY(110vh) rotate(720deg);
     opacity: 0;
-  }
-}
-@media (max-width: 768px) {
-
-  body {
-    padding: 20px;
-    font-size: 18px;
-  }
-
-  h1 {
-    font-size: 2.2rem;
-    text-align: center;
-  }
-
-  p {
-    font-size: 1.2rem;
-    line-height: 1.8;
-  }
-
-  button {
-    font-size: 18px;
-    padding: 15px 30px;
-  }
-
-  .envelope {
-    width: 95%;
-    height: 500px;
-  }
-
-  .letter {
-    width: 85%;
-    height: 400px;
-    left: 7.5%;
-  }
-
-  .record-player {
-    margin: 70px auto;
-  }
-
-  .spotify-button {
-    font-size: 20px;
-    padding: 18px 30px;
   }
 }
