@@ -1,26 +1,55 @@
+* {
+  box-sizing: border-box;
+}
+
 body {
   font-family: Arial, sans-serif;
   text-align: center;
   background: #c9a8d8;
-  padding: 50px;
+  padding: 20px;
+  margin: 0;
+  overflow-x: hidden;
 }
 
 .page {
   display: none;
+  min-height: 100vh;
 }
 
 .page.active {
   display: block;
 }
 
+h1 {
+  color: #4b275f;
+  font-size: clamp(1.8rem, 5vw, 3rem);
+}
+
+h2 {
+  color: #4b275f;
+}
+
+p {
+  color: #5b3f5b;
+  font-size: clamp(1rem, 3vw, 1.2rem);
+  line-height: 1.6;
+}
+
+/* Buttons */
+
 button {
-  padding: 12px 20px;
-  border-radius: 10px;
+  padding: 12px 25px;
+  border-radius: 15px;
   border: none;
   cursor: pointer;
   background: #6b3a8b;
+  color: white;
   font-size: 16px;
+  margin: 10px;
 }
+
+/* Floating hearts */
+
 #hearts {
   position: fixed;
   width: 100%;
@@ -29,6 +58,7 @@ button {
   left: 0;
   pointer-events: none;
   overflow: hidden;
+  z-index: 1;
 }
 
 .heart {
@@ -49,167 +79,270 @@ button {
     opacity: 0;
   }
 }
-.record-player {
-  position: relative;
-  width: min(330px, 85vw);
-  height: min(330px, 85vw);
-  margin: 40px auto;
-  background: #e6d6ff;
-  border-radius: 25px;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.record-player::before {
-  content: "";
-  position: absolute;
-  width: 280px;
-  height: 280px;
-  background: #f8f1ff;
-  border-radius: 20px;
-  box-shadow: inset 0 0 15px rgba(0,0,0,0.15);
-}
-.record {
-  position: relative;
-  z-index: 2;
-  width: 230px;
-  height: 230px;
-  background: black;
-  border-radius: 50%;
-  animation: spin 5s linear infinite;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
 
-.record-center {
-  width: 60px;
-  height: 60px;
-  background: #b48cff;
-  border-radius: 50%;
-  position: relative;
-  z-index: 4;
-}
 
-.needle {
-  position: absolute;
-  z-index: 5;
-  width: 8px;
-  height: 120px;
-  background: silver;
-  right: 35px;
-  top: 40px;
-  border-radius: 10px;
-  transform: rotate(35deg);
-  transform-origin: bottom;
-}
+/* Envelope */
 
-.spotify-button {
-  display: inline-block;
-  background: #9b6bb8;
-  color: #e8d8f0;
-  padding: 15px 25px;
-  border-radius: 30px;
-  text-decoration: none;
-  font-size: 18px;
-}
 .envelope {
   position: relative;
   width: min(500px, 90vw);
-  height: 420px;
+  height: min(380px, 80vw);
   background: #c9a8c9;
-  margin: 50px auto;
+  margin: 40px auto;
   border-radius: 15px;
-  box-shadow: 0 15px 35px rgba(0,0,0,0.25);
+  box-shadow: 0 15px 35px rgba(0,0,0,.25);
   overflow: hidden;
 }
 
 
-/* Envelope flap */
-.flap {
-  position: absolute;
-  top: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 0;
-  height: 0;
-  border-left: 45vw solid transparent;
-  border-right: 45vw solid transparent;
-  border-top: 150px solid #b88bb8;
-  transform-origin: top;
-  z-index: 3;
-  animation: openEnvelope 2s ease forwards;
-}
-
-
 /* Letter */
- .letter {
+
+.letter {
   position: absolute;
   background: white;
-  width: calc(100% - 40px);
-  height: 350px;
-  left: 20px;
-  top: 60px;
+
+  width: 85%;
+  height: 85%;
+
+  left: 7.5%;
+  top: 40px;
+
   padding: 20px;
-  box-sizing: border-box;
+
   border-radius: 10px;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
-  z-index: 2;
+
+  box-shadow: 0 8px 20px rgba(0,0,0,.2);
+
   overflow-y: auto;
-  animation: letterRise 2s ease 1s forwards;
-  transform: translateY(100px);
+
+  animation: letterRise 2s ease forwards;
 }
 
 
 #poem {
   white-space: pre-line;
-  line-height: 1.8;
-  font-size: 18px;
-  color: #5b3f5b;
+  font-size: clamp(.9rem, 3vw, 1.1rem);
 }
 
 
-/* Opens the envelope flap */
-@keyframes openEnvelope {
+/* Record Player */
+
+.record-player {
+
+  position: relative;
+
+  width: min(330px, 85vw);
+  height: min(330px, 85vw);
+
+  margin: 40px auto;
+
+  background: #e6d6ff;
+
+  border-radius: 25px;
+
+  box-shadow: 0 10px 30px rgba(0,0,0,.2);
+
+  display:flex;
+  justify-content:center;
+  align-items:center;
+
+}
+
+
+.record-player::before {
+
+  content:"";
+
+  position:absolute;
+
+  width:85%;
+  height:85%;
+
+  background:#f8f1ff;
+
+  border-radius:20px;
+
+}
+
+
+.record {
+
+  position:relative;
+
+  z-index:2;
+
+  width:70%;
+  height:70%;
+
+  background:black;
+
+  border-radius:50%;
+
+  animation:spin 5s linear infinite;
+
+  display:flex;
+
+  justify-content:center;
+  align-items:center;
+
+}
+
+
+@keyframes spin {
+
   from {
-    transform: rotateX(0deg);
+    transform:rotate(0deg);
   }
 
   to {
-    transform: rotateX(180deg);
+    transform:rotate(360deg);
   }
+
 }
 
 
-/* Letter slides upward */
-@keyframes letterRise {
-  from {
-    transform: translateY(100px);
-  }
+.record-center {
 
-  to {
-    transform: translateY(0);
-  }
+  width:25%;
+  height:25%;
+
+  background:#b48cff;
+
+  border-radius:50%;
+
 }
+
+
+.needle {
+
+  position:absolute;
+
+  z-index:5;
+
+  width:8px;
+
+  height:35%;
+
+  background:silver;
+
+  right:12%;
+
+  top:12%;
+
+  border-radius:10px;
+
+  transform:rotate(35deg);
+
+}
+
+
+/* Spotify */
+
+.spotify-button {
+
+  display:inline-block;
+
+  background:#9b6bb8;
+
+  color:white;
+
+  padding:15px 25px;
+
+  border-radius:30px;
+
+  text-decoration:none;
+
+  font-size:18px;
+
+}
+
+
+/* Confetti */
+
 .confetti {
-  position: fixed;
-  top: -50px;
-  font-size: 25px;
-  animation: fall linear forwards;
-  z-index: 10;
-  pointer-events: none;
+
+  position:fixed;
+
+  top:-50px;
+
+  font-size:25px;
+
+  animation:fall linear forwards;
+
+  z-index:10;
+
 }
 
 
 @keyframes fall {
+
   0% {
-    transform: translateY(0) rotate(0deg);
-    opacity: 1;
+
+    transform:translateY(0) rotate(0);
+
   }
 
   100% {
-    transform: translateY(110vh) rotate(720deg);
-    opacity: 0;
+
+    transform:translateY(110vh) rotate(720deg);
+
+    opacity:0;
+
   }
+
+}
+
+
+/* Envelope animations */
+
+@keyframes letterRise {
+
+  from {
+
+    transform:translateY(50px);
+
+  }
+
+  to {
+
+    transform:translateY(0);
+
+  }
+
+}
+
+
+/* Phone adjustments */
+
+@media(max-width:600px){
+
+  body {
+
+    padding:15px;
+
+  }
+
+
+  button {
+
+    font-size:15px;
+
+  }
+
+
+  .envelope {
+
+    height:420px;
+
+  }
+
+
+  .letter {
+
+    height:330px;
+
+    top:50px;
+
+  }
+
 }
