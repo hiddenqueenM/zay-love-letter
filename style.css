@@ -212,3 +212,45 @@ button {
     opacity: 0;
   }
 }
+@media (max-width: 768px) {
+
+  body {
+    padding: 20px;
+    font-size: 18px;
+  }
+
+  h1 {
+    font-size: 2.2rem;
+  }
+
+  p {
+    font-size: 1.2rem;
+    line-height: 1.8;
+  }
+
+  button {
+    font-size: 18px;
+    padding: 15px 30px;
+  }
+
+  .envelope {
+    width: 95%;
+    height: 500px;
+  }
+
+  .letter {
+    width: 85%;
+    height: 400px;
+    left: 7.5%;
+  }
+
+  .record-player {
+    transform: scale(1.2);
+    margin: 70px auto;
+  }
+
+  .spotify-button {
+    font-size: 20px;
+    padding: 18px 30px;
+  }
+}
